@@ -9,7 +9,7 @@
 Want to chat or play with other MissedIT / eyehook users? Join us on Discord :- <a href = https://discord.gg/PDtg8hd><b>Hacker.Police Discord</b></a>
 
 
-## What is MissedIT?
+## What is EyeHook?
 
 A fully featured internal hack for *CounterStrike : Global Offensive* written in C++. Which is a Fork of <a href = ""><b>MissedIT</b></a>
 
@@ -41,11 +41,11 @@ sudo dnf install cmake gcc-c++ gdb git libstdc++-static mesa-libGL-devel SDL2-de
 #### Download MissedIT:
 
 ```bash
-git clone --recursive https://github.com/itsme2417/MissedIT
+git clone --recursive https://github.com/itsme2417/EyeHook.git
 ```
 
 ```bash
-cd MissedIT
+cd EyeHook
 ```
 
 ===================
@@ -69,7 +69,7 @@ First of all, make sure CS:GO is open, and you are not in any official valve ser
 
 Navigate to the directory where MissedIT was built if you have not ready.
 ```bash
-cd MissedIT
+cd EyeHook
 ```
 
 Now, you can inject the hack with the `load` script
@@ -95,14 +95,6 @@ You will need to install this font https://mega.nz/file/omZBlaBQ#AOF2CpAuWTg2Z45
 Now that eyehook has been injected into the game, press <kbd>Insert</kbd> on your keyboard to open the hack menu (<kbd>ALT</kbd>+<kbd>I</kbd> if you are using a laptop).
 
 If you want to change skins, create and load configs or open the player list, you can find those buttons at the top of the screen.
-
-
-## Unloading the hack
-
-If you wish to unload the hack from the game, you can do so by entering the command:
-```bash
-./uload
-```
 
 ## Configs
 
