@@ -42,6 +42,12 @@ void FakeLag::CreateMove(CUserCmd* cmd)
 		return;
 	if (!Settings::FakeLag::enabled)
 		return;
+	if (Settings::FakeLag::microphone)
+	{
+	    if(inputSystem->IsButtonDown(Settings::FakeLag::microphoneKey))
+		return;
+	}
+
 		int velocity2d = localplayer->GetVelocity().Length2D();
                 int max_choke;
 		if (cmd->buttons & IN_ATTACK && Settings::FakeLag::shiftshot){
