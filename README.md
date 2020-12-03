@@ -6,7 +6,7 @@
 ===================
 # MissedIT
 
-Want to chat or play with other MissedIT / eyehook users? Join us on Discord :- <a href = https://discord.gg/PDtg8hd><b>Hacker.Police Discord</b></a>
+Want to chat or play with other MissedIT / EyeHook users? Join us on Discord :- <a href = https://discord.gg/PDtg8hd><b>Hacker.Police Discord</b></a>
 
 
 ## What is EyeHook?
@@ -17,7 +17,7 @@ A fully featured internal hack for *CounterStrike : Global Offensive* written in
 
 **Note:** _Do NOT download or compile as the root user._
 
-#### Download the dependencies required to build MissedIT:
+#### Download the dependencies required to build EyeHook:
 
 If you are having problems compiling make sure you've got the latest version of `g++`.
 
@@ -38,7 +38,7 @@ sudo dnf install cmake gcc-c++ gdb git libstdc++-static mesa-libGL-devel SDL2-de
 
 ===================
 
-#### Download MissedIT:
+#### Download EyeHook:
 
 ```bash
 git clone --recursive https://github.com/itsme2417/EyeHook.git
@@ -67,7 +67,7 @@ You can later update with
 
 First of all, make sure CS:GO is open, and you are not in any official valve server. However, it is not recommended to inject while CS:GO is loading into a map. 
 
-Navigate to the directory where MissedIT was built if you have not ready.
+Navigate to the directory where EyeHook was built if you have not ready.
 ```bash
 cd EyeHook
 ```
