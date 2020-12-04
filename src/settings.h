@@ -1817,6 +1817,8 @@ inline ButtonCode_t key;
 		inline int value = 9;
 		inline bool adaptive = false;
                 inline ButtonCode_t ckey;
+		inline bool microphone = false;
+		inline ButtonCode_t microphoneKey = KEY_K;
 
 	}
 

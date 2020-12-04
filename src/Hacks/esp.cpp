@@ -915,6 +915,8 @@ static void DrawBoneMap( C_BasePlayer* player ) {
 }
 static void DrawAATrace( QAngle fake, QAngle actual ) {
         C_BasePlayer* localPlayer = ( C_BasePlayer* ) entityList->GetClientEntity( engine->GetLocalPlayer() );
+        if(!localPlayer->GetAlive())
+            return;
         Vector src3D, dst3D, forward;
         Vector src, dst;
         trace_t tr;
@@ -1575,19 +1577,19 @@ static void DrawPlayer(C_BasePlayer* player)
 
 	if ( !Entity::IsTeamMate(player, localplayer) ) // mean the entity is enemy
 	{
-		if (Settings::ESP::FilterEnemy::Boxes::enabled ) // Drawing the box arround player
+		if (Settings::ESP::FilterEnemy::Boxes::enabled ) // Drawing the box around player
 			DrawBox(playerColor, x, y, w, h, player, Settings::ESP::FilterEnemy::Boxes::type);
 		
-		if (Settings::ESP::FilterEnemy::HelthBar::enabled) // Drawing the helth bar
+		if (Settings::ESP::FilterEnemy::HelthBar::enabled) // Drawing the health bar
 			DrawPlayerHealthBars(player, x, y, w, h, playerColor, Settings::ESP::FilterEnemy::HelthBar::type);
 		
 		if ( Settings::ESP::FilterEnemy::Tracers::enabled ) // Drawing tracers
 			DrawTracer(player, Settings::ESP::FilterEnemy::Tracers::type);
 		
-		if ( Settings::ESP::FilterEnemy::Skeleton::enabled ) // Drawing Skeliton Bitch Fuzion is god
+		if ( Settings::ESP::FilterEnemy::Skeleton::enabled ) // Drawing Skeleton Bitch Fuzion is god
 			DrawSkeleton(player, localplayer);
 		
-		if (Settings::ESP::FilterEnemy::HeadDot::enabled) // Draw the head dot white indicate to kneck sry :P
+		if (Settings::ESP::FilterEnemy::HeadDot::enabled) // Draw the head dot white indicate to neck sry :P
 			DrawHeaddot(player);
 		
 		/* Checks various Text Settings */
@@ -1605,17 +1607,17 @@ static void DrawPlayer(C_BasePlayer* player)
 		if ( Settings::ESP::FilterAlise::Tracers::enabled ) // Drawing tracers
 			DrawTracer(player, Settings::ESP::FilterAlise::Tracers::type);
 		
-		if ( Settings::ESP::FilterAlise::Skeleton::enabled ) // Drawing Skeliton Bitch Fuzion is god
+		if ( Settings::ESP::FilterAlise::Skeleton::enabled ) // Drawing Skeleton Bitch Fuzion is god
 			DrawSkeleton(player, localplayer);
 		
-		if (Settings::ESP::FilterAlise::HeadDot::enabled) // Draw the head dot white indicate to kneck sry :P
+		if (Settings::ESP::FilterAlise::HeadDot::enabled) // Draw the head dot white indicate to neck sry :P
 			DrawHeaddot(player);
 		
 		/* Checks various Text Settings */
 		if (Settings::ESP::FilterAlise::playerInfo::enabled)
 			DrawPlayerText( player, localplayer, x, y, w, h );
 	}
-	else if ( player == localplayer && Settings::ThirdPerson::toggled) // There is no need to check this must I try to be secure xd
+	else if ( player == localplayer && Settings::ThirdPerson::toggled) // There is no need to check this. I try to be secure xd
 	{
 		if (Settings::ESP::FilterLocalPlayer::Boxes::enabled )
 			DrawBox(playerColor, x, y, w, h, player, Settings::ESP::FilterLocalPlayer::Boxes::type);
@@ -1626,10 +1628,10 @@ static void DrawPlayer(C_BasePlayer* player)
 		if ( Settings::ESP::FilterLocalPlayer::Tracers::enabled ) // Drawing tracers
 			DrawTracer(player, Settings::ESP::FilterLocalPlayer::Tracers::type);
 		
-		if ( Settings::ESP::FilterLocalPlayer::Skeleton::enabled ) // Drawing Skeliton Bitch Fuzion is god
+		if ( Settings::ESP::FilterLocalPlayer::Skeleton::enabled ) // Drawing Skeleton Bitch Fuzion is god
 			DrawSkeleton(player, localplayer);
 		
-		if (Settings::ESP::FilterLocalPlayer::HeadDot::enabled) // Draw the head dot white indicate to kneck sry :P
+		if (Settings::ESP::FilterLocalPlayer::HeadDot::enabled) // Draw the head dot white indicate to neck sry :P
 			DrawHeaddot(player);
 		
 		/* Checks various Text Settings */
@@ -1639,7 +1641,7 @@ static void DrawPlayer(C_BasePlayer* player)
 	}
 	if (Settings::ESP::Sprite::enabled)
        DrawSprite(x, y, w, h, player);
-	// This is brocken xd
+	// This is broken xd
 	// if (Settings::ESP::BulletTracers::enabled)
 	// 	DrawBulletTrace(player);
 	// else if (!Entity::IsTeamMate(player, localplayer) && Settings::ESP::FilterEnemy::BulletTracers::enabled);
